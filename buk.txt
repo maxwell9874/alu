@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="com.pwc.Books" table="Books">
+
+<!--  Specify the primary key attribute in the class -->
+<id name="bookId" column="bookid">
+<generator class="assigned"></generator>
+</id>
+
+<!--  Map other non-primary key columns with the class properties -->
+<property name="bookName" column="bookname"></property>
+<property name="author" column="author"></property>
+<property name="bookPrice" column="bookprice"></property>
+
+
+</class>
+</hibernate-mapping>
