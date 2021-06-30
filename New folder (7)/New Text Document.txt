@@ -1,0 +1,40 @@
+package com.pwc;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+
+/**
+ * Servlet implementation class Servlet
+ */
+public class Servlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter pw=response.getWriter();
+		Stock st1=new Stock("IBM",782.5);
+		StringWriter writer=new StringWriter();
+		try {
+		JAXBContext contextObj=JAXBContext.newInstance(Stock.class);
+		Marshaller marshalObj=contextObj.createMarshaller();
+		marshalObj.marshal(st1, writer);//the xml will be assigned to writer variable
+		}
+		catch(JAXBException e)
+		{
+		System.out.println("Some exceptions occurred");
+		}
+		pw.println(writer);
+	}
+
+}

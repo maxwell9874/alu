@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> Welcome to my XML Generator page</h1>
+<h2> Click the link below to generate XML for Stock class</h2>
+<a href="Servlet">Generate XML</a>
+</body>
+</html>

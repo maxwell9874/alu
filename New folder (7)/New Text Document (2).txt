@@ -1,0 +1,32 @@
+package com.pwc;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class Stock {
+	String stockName;
+	double stockPrice;
+	public Stock() {
+	super();
+	// TODO Auto-generated constructor stub
+	}
+	public Stock(String stockName, double stockPrice) {
+	super();
+	this.stockName = stockName;
+	this.stockPrice = stockPrice;
+	}
+	@XmlElement
+	public String getStockName() {
+	return stockName;
+	}
+	public void setStockName(String stockName) {
+	this.stockName = stockName;
+	}
+	@XmlElement
+	public double getStockPrice() {
+	return stockPrice;
+	}
+	public void setStockPrice(double stockPrice) {
+	this.stockPrice = stockPrice;
+	}
+}
